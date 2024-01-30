@@ -18,6 +18,8 @@ body {
 
 canvas {
     background-color: #1d2d3d !important;
+    background-image: radial-gradient(transparent, transparent, black);
+    transition: .5s ease-in-out;
 }
 
 video {
@@ -59,7 +61,7 @@ label {
     /* background-size: 200%; */
     /* color: black; */
     /* background-color: rgba(245, 245, 245, 0.251); */
-    background-image: linear-gradient(90deg , rgba(0, 0, 0, 0.7) , transparent , rgba(0, 0, 0, 0.7));
+    background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7), transparent, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
 }
 
 .header input {
@@ -104,6 +106,12 @@ label {
     color: white !important;
 }
 
+.student-container label,
+.institute-container label {
+    cursor: pointer;
+    color: white;
+}
+
 .header-input {
     display: flex;
     flex-direction: column;
@@ -113,6 +121,11 @@ label {
     justify-content: center;
     z-index: 1;
 }
+
+.header-input img {
+    filter: contrast(300%);
+}
+
 
 .student-form,
 .institution-form {
@@ -166,10 +179,6 @@ label,
 .bubble {
     display: block;
     -webkit-tap-highlight-color: transparent;
-}
-
-label {
-    animation: float74 4s ease-in-out infinite;
 }
 
 .bubble,
@@ -308,25 +317,5 @@ label {
     .bubble:focus:after,
     .bubble:hover:after {
         transform: translate3d(0, 0, -1px);
-    }
-}
-
-@keyframes float74 {
-
-    from,
-    to {
-        transform: translate(0, 3%);
-    }
-
-    25% {
-        transform: translate(-3%, 0);
-    }
-
-    50% {
-        transform: translate(0, -3%);
-    }
-
-    75% {
-        transform: translate(3%, 0);
     }
 }

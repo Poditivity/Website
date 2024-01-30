@@ -1,0 +1,225 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.why-us-section {
+    min-height: 100vh;
+    min-width: 100vw;
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
+    align-items: center;
+}
+
+.why-us-heading {
+    font-size: 5rem;
+    font-weight: 700;
+    text-align: center;
+    /* color: rgba(255, 255, 255, 0.116);
+    background-image: linear-gradient(to top right, hsl(196, 100%, 55%), rgb(177, 33, 255));
+    background-clip: text;
+    background-position: left; */
+    color: rgb(97, 144, 180);
+    font-family: 'Kalnia', serif;
+}
+
+.cards {
+    display: flex;
+    gap: 1rem;
+}
+
+.card {
+    width: 20vw;
+    height: 60vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 1em;
+    padding: 1rem;
+    text-align: center;
+    /* background-clip: text; */
+    box-shadow: 0 0 2rem 1rem hsl(210, 36%, 10%);
+}
+
+.card .heading {
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 2.5vw;
+    color: black;
+    text-shadow: 0 3px 2px var(--shadow-color);
+}
+
+.card .content {
+    font-size: larger;
+    display: none;
+    text-shadow: 0 2px 2px var(--shadow-color);
+    color: hsl(0, 0%, 0%);
+}
+
+.card:nth-child(1) {
+    --shadow-color: hsl(0, 100%, 39%);
+    transform: rotate(-6deg);
+    background-color: hsl(0, 100%, 79%);
+}
+
+.card:nth-child(2) {
+    --shadow-color: hsl(60, 100%, 19%);
+    transform: rotate(5deg) translateY(50px);
+    background-color: hsl(60, 100%, 79%);
+}
+
+.card:nth-child(3) {
+    --shadow-color: hsl(240, 100%, 39%);
+    transform: rotate(-4deg) translateY(-30px);
+    background-color: hsl(240, 100%, 79%);
+}
+
+.card:nth-child(4) {
+    --shadow-color: hsl(120, 100%, 5%);
+    transform: rotate(9deg) translateY(40px);
+    background-color: hsl(120, 100%, 79%);
+}
+
+.card:nth-child(1):hover {
+    background-color: hsl(0, 100%, 69%);
+    box-shadow: 0 0 2rem .5rem hsl(0, 100%, 29%);
+}
+
+.card:nth-child(2):hover {
+    background-color: hsl(60, 100%, 43%);
+    box-shadow: 0 0 2rem .5rem hsl(60, 100%, 29%);
+}
+
+.card:nth-child(3):hover {
+    background-color: hsl(240, 100%, 69%);
+    box-shadow: 0 0 2rem .5rem hsl(240, 100%, 29%);
+}
+
+.card:nth-child(4):hover {
+    background-color: hsl(120, 100%, 37%);
+    box-shadow: 0 0 2rem .5rem hsl(120, 100%, 29%);
+}
+
+.card:hover {
+    cursor: pointer;
+    z-index: 10;
+    scale: 1.2;
+    transition: all .3s ease-in-out;
+    animation: shake .5s ease-in-out;
+}
+
+.card:hover .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    animation: moveUp .3s ease-in-out forwards;
+}
+
+@keyframes moveUp {
+    from {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+@keyframes shake {
+    30% {
+        rotate: 10deg;
+    }
+
+    70% {
+        rotate: -10deg;
+    }
+}
+
+/** Handling Responsivenes */
+
+@media screen and (max-width : 1040px) {
+
+    .why-us-section {
+        min-height: 120vh;
+    }
+
+    .card {
+        height: 50vh;
+    }
+
+    .card:hover {
+        height: 60vh;
+    }
+
+    .card .content {
+        font-size: 16px;
+    }
+}
+
+@media screen and (max-width : 775px) {
+    .why-us-heading {
+        font-size: 5rem;
+    }
+
+    .card {
+        width: 22vw;
+        height: 45vh;
+    }
+
+    .card .heading {
+        font-size: 20px;
+    }
+
+    .card .content {
+        font-size: 15px;
+    }
+}
+
+@media screen and (max-width : 435px) {
+    .why-us-heading {
+        font-size: 4rem;
+        margin-bottom: 0;
+    }
+
+    .why-us-section {
+        padding-block-start: 5rem;
+        gap: 1rem;
+    }
+
+    .cards {
+        flex-direction: column;
+        width: 100%;
+        gap: 3rem;
+    }
+
+    .card {
+        transform: rotateZ(0deg) !important;
+        width: 70%;
+        font-size: 25px;
+        height: 50vh;
+        margin-inline: auto;
+        animation-name: none;
+    }
+
+    .card .heading {
+        font-size: larger;
+        text-shadow: none;
+    }
+}
+
+@media screen and (max-width : 330px) {
+
+    .why-us-heading {
+        margin-bottom: 4rem;
+    }
+
+    .why-us-section {
+        padding-block-start: 0;
+    }
+}

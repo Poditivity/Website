@@ -1,0 +1,235 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.features-container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    padding: 3rem;
+
+}
+
+.row-one {
+    display: flex;
+    gap: 3rem;
+    /* padding-right: 4rem; */
+    animation: moveAsideToLeft linear forwards;
+    animation-timeline: view();
+}
+
+.row-two {
+    display: flex;
+    gap: 3rem;
+    /* padding-left: 4rem; */
+    animation: moveAsideToRight linear forwards;
+    animation-timeline: view();
+}
+
+.features-heading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 5rem;
+    font-weight: 700;
+    font-family: 'Kalnia', serif;
+    text-align: center;
+    text-transform: uppercase;
+    color: rgb(97, 144, 180);
+    /* color: transparent; */
+    /* background-image: linear-gradient(to right, hsl(196, 100%, 55%), rgb(177, 33, 255));
+    background-clip: text;
+    background-position: left; */
+}
+
+.features-heading .image {
+    width: 100%;
+
+}
+
+.features-heading .image img {
+    object-fit: contain;
+    width: 50%;
+    height: 50%;
+}
+
+.feature {
+    width: 100%;
+    padding: 2rem;
+    display: flex;
+    gap: 1rem;
+    border-radius: 1rem;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+
+.feature .heading {
+    font-size: 2rem;
+    font-weight: 700;
+    text-align: center;
+    font-family: 'Kalnia', serif;
+}
+
+.feature .content {
+    font-size: larger;
+    text-align: center;
+}
+
+.feature .image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.feature .image img {
+    width: 30%;
+    object-fit: cover;
+    scale: 2;
+    border-radius: 50%;
+    mix-blend-mode: multiply;
+}
+
+.feature:hover img {
+    animation: rotate .5s linear;
+}
+
+.feature:nth-child(2n) {
+    border: solid hsl(0, 100%, 74%);
+    background-color: rgb(255, 225, 225);
+}
+
+.feature:nth-child(2n - 1) {
+    border: solid hsl(240, 100%, 31%);
+    background-color: rgb(210, 210, 255);
+}
+
+.feature:nth-child(2n):hover {
+    transition: background-color .5s ease-in-out;
+    border: solid hsl(0, 100%, 74%);
+    background-color: hsl(0, 100%, 74%);
+    box-shadow: 0 0 1rem 0.1rem hsl(0, 100%, 54%);
+}
+
+.feature:nth-child(2n - 1):hover {
+    transition: background-color .5s ease-in-out;
+    border: solid hsl(240, 100%, 74%);
+    background-color: hsl(240, 100%, 74%);
+    box-shadow: 0 0 1rem 0.1rem hsl(240, 100%, 54%);
+}
+
+.empty-feature {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: solid white;
+    border-radius: 1rem;
+}
+
+.empty-feature.no-border {
+    border: none;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotateY(0deg) translateY(-30px);
+    }
+
+    100% {
+        transform: rotateY(360deg);
+    }
+}
+
+
+@keyframes moveAsideToRight {
+    to {
+        padding-right: 10rem;
+    }
+}
+
+@keyframes moveAsideToLeft {
+    to {
+        padding-left: 10rem;
+    }
+}
+
+
+/** Handling Responsiveness */
+
+@media screen and (max-width : 1040px) {
+
+    .row-two,
+    .row-one {
+        gap: 2rem;
+    }
+
+    .row-one .heading,
+    .row-two .heading {
+        text-align: center;
+    }
+}
+
+@media screen and (max-width : 775px) {
+
+    .row-two,
+    .row-one {
+        gap: 1rem;
+        padding: 1rem !important;
+        flex-wrap: wrap;
+    }
+
+    .row-two {
+        flex-wrap: wrap-reverse;
+    }
+
+    .row-one .heading,
+    .row-two .heading {
+        font-size: 20px;
+    }
+
+    .row-one,
+    .row-two {
+        font-size: 15px;
+    }
+
+    .feature {
+        width: 48%;
+        flex-shrink: 0;
+    }
+}
+
+
+@media screen and (max-width : 435px) {
+    .features-heading {
+        padding-block-start: 3rem;
+        font-size: 3rem;
+    }
+
+    .features-container {
+        gap : 0;
+    }
+
+    .row-one,
+    .row-two {
+        flex-direction: column;
+        animation: none;
+    }
+
+    .feature {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width : 380px) {
+    .features-container {
+        padding: 1rem;
+    }
+}
+@media screen and (max-width : 330px) {
+    .features-container {
+        padding: 0;
+    }
+}

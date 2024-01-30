@@ -2,14 +2,12 @@ function handleCheckboxClick(clickedCheckboxId) {
     const checkboxes = document.querySelectorAll('input[name="checkboxGroup"]');
 
     checkboxes.forEach(checkbox => {
-        document.querySelector('.choosing-text').style.display = 'none'
+        document.querySelector('.choosing-text').style.display = 'none';
+        document.querySelector('canvas').style.filter = "brightness(50%)"
         if (checkbox.id !== clickedCheckboxId) {
-            checkbox.checked = false; // Uncheck other checkboxes
+            checkbox.checked = false; 
         }
     });
-
-    // Additional code for your checkbox functionality if needed
-    // ...
 }
 
 const buttons = document.querySelectorAll('input[name = "checkboxGroup"]');
@@ -30,8 +28,8 @@ function showForm(userType) {
     } else if (userType === 'institution') {
         studentForm.style.display = 'none';
         institutionForm.style.display = 'grid';
-
     }
+
     // Reset styles for both radio buttons and images
     document.getElementById('student').classList.remove('glow');
     document.getElementById('institution').classList.remove('glow');

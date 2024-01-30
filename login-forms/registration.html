@@ -7,7 +7,7 @@
     <title>Login Form</title>
     <link rel="stylesheet" href="registeration.css">
     <script defer="" src="registration.js"></script>
-    <link rel="shortcut icon" href="poditivity-logo.png">
+    <link rel="shortcut icon" href="../images/logo.png">
 </head>
 
 
@@ -17,22 +17,20 @@
         <div class="header-input" id="studentContainer">
             <img src="student.png" class="student-image images" alt="" id="studentImage">
             <div class="student-container">
-                <span>Student</span>
-                <label>
-                    <input value="student" name="checkboxGroup" type="checkbox" class="bubble" id="student"
-                        title="Student Form" onclick="handleCheckboxClick('student')">
-                </label>
+                <span></span>
+                <label for="student">Student</label>
+                <input value="student" name="checkboxGroup" type="checkbox" class="bubble" id="student"
+                    title="Student Form" onclick="handleCheckboxClick('student')">
             </div>
         </div>
         <hr>
         <div class="header-input" id="institutionContainer">
             <img src="university.png" class="institution-image images" alt="" id="institutionImage">
             <div class="institute-container">
-                <span>Institution</span>
-                <label>
-                    <input value="institution" name="checkboxGroup" type="checkbox" class="bubble" id="institution"
-                        title="Institution Form" onclick="handleCheckboxClick('institution')">
-                </label>
+                <span></span>
+                <label for="institution">Institution</label>
+                <input value="institution" name="checkboxGroup" type="checkbox" class="bubble" id="institution"
+                    title="Institution Form" onclick="handleCheckboxClick('institution')">
             </div>
         </div>
     </header>
@@ -42,7 +40,7 @@
     </div>
     <div class="form-container">
         <div class="student-form-container">
-            <form class="student-form  form-group" action="" method="post">
+            <form class="student-form  form-group" action="#" method="post">
                 <div class="label first-name">
                     <div>First Name <span>*</span> </div>
                     <input type="email" name="firstName" title="First Name" required placeholder="e.g. Something">
@@ -131,9 +129,6 @@
             </form>
         </div>
     </div>
-
-    <script>
-    </script>
 </body>
 
 </html>

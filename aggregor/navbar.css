@@ -84,6 +84,7 @@ nav .items-container ul li:hover a {
     position: relative;
     overflow: hidden;
     outline: 2px solid #2c9caf;
+    margin-inline: 1rem;
 }
 
 button:hover {

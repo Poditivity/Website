@@ -1,0 +1,605 @@
+@import url('https://fonts.googleapis.com/css2?family=Kalnia&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.main-container {
+    min-height: 100vh;
+    /* background: rgb(54, 69, 79); */
+    /* background: linear-gradient(0deg, rgb(54, 69, 79) 0%, rgba(58, 73, 83, 1) 14%, rgba(96, 108, 116, 1) 36%, rgba(241, 242, 243, 1) 86%, rgba(255, 255, 255, 1) 100%); */
+}
+
+.lines .line:first-child {
+    position: absolute;
+    top: -30%;
+    left: -30%;
+    width: 50%;
+    height: 100%;
+    color: hsl(218, 45%, 70%, .7);
+    border-radius: 50%;
+    border-right: solid;
+    z-index: -10;
+}
+
+.lines .line:first-child::after {
+    content: '';
+    position: absolute;
+    top: -10%;
+    left: -10%;
+    width: 100%;
+    height: 100%;
+    color: rgba(255, 255, 255, 0.271);
+    background-color: hsl(218, 45%, 70%, .15);
+    border-radius: 50%;
+    z-index: -10;
+}
+
+.lines .line:nth-child(2) {
+    position: absolute;
+    top: 50%;
+    left: 80%;
+    width: 50%;
+    height: 100%;
+    color: hsl(218, 45%, 70%, .7);
+    border-radius: 50%;
+    border-left: solid;
+    z-index: -10;
+}
+
+.lines .line:nth-child(2)::after {
+    content: '';
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    width: 100%;
+    height: 100%;
+    background-color: hsl(218, 45%, 70%, .15);
+    border-radius: 50%;
+    z-index: -10;
+}
+
+.lines .line:nth-child(3) {
+    position: absolute;
+    top: -70%;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    color: hsl(218, 45%, 70%, .7);
+    border-radius: 50%;
+    border-bottom: solid;
+}
+
+.lines .line:nth-child(3)::after {
+    content: '';
+    position: absolute;
+    top: -10%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    color: hsl(218, 45%, 70%, .15);
+    border-radius: 50%;
+    border-bottom: 2rem solid;
+    z-index: -10;
+}
+
+.header-container {
+    min-height: 100vh;
+    min-width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 4rem;
+}
+
+
+.header-container .text-container {
+    margin-top: 10rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.header-container .text-container .static-txt {
+    color: #fff;
+    font-size: 5.5rem;
+    font-weight: 900;
+    color: rgb(213, 234, 250);
+    font-family: 'Kalnia', serif;
+}
+
+.header-container .text-container .dynamic-txts {
+    margin-left: 15px;
+    height: 90px;
+    line-height: 90px;
+    overflow: hidden;
+}
+
+.dynamic-txts li {
+    list-style: none;
+    color: #68bcdc;
+    text-align: center;
+    font-size: 60px;
+    font-weight: 500;
+    position: relative;
+    top: 0;
+    animation: slide 12s steps(4) infinite;
+}
+
+@keyframes slide {
+    100% {
+        top: -360px;
+    }
+}
+
+.dynamic-txts li span {
+    position: relative;
+    margin: 5px 0;
+    line-height: 90px;
+
+}
+
+.dynamic-txts li span::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    height: 106%;
+    width: 100%;
+    /* background: hsl(218, 45%, 10%); */
+    /* background-color: #111; */
+    background-color: #1d2d3d;
+    border-left: 7px solid #68bcdc;
+    animation: typing 3s steps(10) infinite , blink .5s linear infinite;
+}
+
+@keyframes typing {
+
+    40%,
+    60% {
+        left: calc(100% + 30px);
+    }
+
+    100% {
+        left: 0;
+    }
+}
+
+.element {
+    --opacity: .3;
+    position: absolute;
+    font-size: 1.2rem;
+    z-index: 50;
+    font-weight: 600;
+    border-radius: 2rem;
+    padding: .5rem 1rem;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+}
+
+.element-1 {
+    --speed-x: 40;
+    --speed-y: 35;
+    --rotate-angle : -10deg;
+    top: 30%;
+    left: 10%;
+    transform: rotateZ(var(--rotate-angle));
+    background-color: hsla(0, 100%, 50%, var(--opacity));
+    color: rgba(255, 0, 0);
+    border: 2px solid red;
+}
+
+.element-2 {
+    --speed-x: -20;
+    --speed-y: 40;
+    --rotate-angle : 10deg;
+    top: 15%;
+    left: 70%;
+    transform: rotateZ(var(--rotate-angle));
+    background-color: hsla(60, 100%, 50%, var(--opacity));
+    color: rgba(255, 255, 0);
+    border: 2px solid yellow;
+}
+
+.element-3 {
+    --speed-x: -10;
+    --speed-y: -10;
+    --rotate-angle : 7deg;
+    left: 70%;
+    top: 80%;
+    transform: rotateZ(var(--rotate-angle));
+    background-color: hsla(240, 100%, 50%, var(--opacity));
+    color: rgba(0, 0, 255);
+    border: 2px solid blue;
+}
+
+.element-4 {
+    --speed-x: -40;
+    --speed-y: 10;
+    --rotate-angle : -30deg;
+    top: 50%;
+    left: 85%;
+    transform: rotateZ(var(--rotate-angle));
+    background-color: hsla(120, 100%, 25%, var(--opacity));
+    color: rgb(0, 243, 0);
+    border: 2px solid rgb(0, 243, 0);
+}
+
+.element-5 {
+    --speed-x: 30;
+    --speed-y: 5;
+    --rotate-angle : 15deg;
+    top: 60%;
+    left: 15%;
+    transform: rotateZ(var(--rotate-angle));
+    background-color: hsl(207, 100%, 63%, .3);
+    color: rgb(66, 170, 255);
+    border: 2px solid hsl(207, 100%, 63%);
+}
+
+.element-6 {
+    --speed-x: 3;
+    --speed-y: 40;
+    --rotate-angle : -10deg;
+    top: 13%;
+    left: 40%;
+    transform: rotateZ(var(--rotate-angle));
+    background-color: hsla(300, 100%, 25%, var(--opacity));
+    color: rgb(235, 0, 235);
+    border: 2px solid rgb(235, 0, 235);
+}
+
+.element-content {
+    opacity: 0;
+}
+
+.element:hover {
+
+    transform: rotate(0deg) !important;
+    transition: transform .5s ease-in-out;
+    opacity: 1;
+    /* animation: swiggle 2s linear infinite; */
+}
+
+.element div:last-child {
+    position: absolute;
+    width: 100px;
+    height: max-content;
+    z-index: 100;
+    padding: 1rem;
+    top: 150%;
+}
+
+.appreciation {
+    min-height: 100vh;
+    text-align: center;
+    /* background-color: #36454f; */
+    display: flex;
+    gap: 5rem;
+    flex-direction: column;
+    align-items: center;
+}
+
+.appreciation .heading {
+    width: 90%;
+    font-size: 5rem;
+    color: white;
+}
+
+.appreciation .heading span {
+    font-family: 'Kalnia', serif !important;
+    font-weight: 100;
+}
+
+.appreciation img {
+    width: 40%;
+}
+
+.appreciation .heading span:nth-of-type(2) {
+    display: inline;
+    --color: #f48530;
+    color: transparent;
+    background-image: linear-gradient(to right, var(--color), var(--color)) !important;
+    background-clip: text;
+    background-size: 0% 0%;
+    background-repeat: no-repeat;
+    animation: text-animation linear forwards;
+    animation-timeline: view();
+    animation-range-start: 50vh;
+    animation-range-end: 90vh;
+}
+
+.appreciation .heading span:nth-of-type(4) {
+    display: inline;
+    --color: green;
+    color: transparent;
+    background-image: linear-gradient(to right, var(--color), var(--color)) !important;
+    background-clip: text;
+    background-size: 0% 0%;
+    background-repeat: no-repeat;
+    animation: text-animation linear forwards;
+    animation-timeline: view();
+    animation-range-start: 70vh;
+    animation-range-end: 90vh;
+}
+
+.appreciation .heading span:nth-of-type(5) {
+    display: inline;
+    --color: rgba(2, 171, 228, 1);
+    color: transparent;
+    background-image: linear-gradient(to right, var(--color), var(--color)) !important;
+    background-clip: text;
+    background-size: 0% 0%;
+    background-repeat: no-repeat;
+    animation: text-animation linear forwards;
+    animation-timeline: view();
+    animation-range-start: 70vh;
+    animation-range-end: 90vh;
+}
+
+.appreciation .recognition {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    opacity: 0;
+    gap: 1rem;
+    font-size: 3rem;
+    font-family: 'Kalnia', serif !important;
+    color: white;
+    animation: appreciationAnimation linear forwards;
+    animation-timeline: view();
+    animation-range-start: entry;
+    animation-range-end: contain 10vh;
+}
+
+.recognition .recognition-content {
+    font-family: 'Kalnia', serif !important;
+}
+
+.appreciation .recognition img {
+    width: 100%;
+}
+
+.appreciation .recognition span {
+    font-size: 2rem;
+}
+
+.appreciation .heading span {
+    color: transparent;
+    background-image: linear-gradient(to right, white, white);
+    background-clip: text;
+    background-size: 0%;
+    background-repeat: no-repeat;
+    animation: text-animation linear forwards;
+    animation-timeline: view();
+    animation-range-start: 70vh;
+    animation-range-end: 90vh;
+}
+
+@keyframes text-animation {
+    30% {
+        background-size: 40%;
+    }
+
+    70% {
+        background-size: 60%;
+    }
+
+    to {
+        background-size: 100%;
+    }
+}
+
+@keyframes parallax-textAnimation {
+    to {
+        transform: translateY(calc(var(--text-speed) * -100px));
+    }
+}
+
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
+}
+
+@keyframes comeCloser {
+
+    /* from {
+        top: 0;
+        left: 0;
+    } */
+    20% {
+        opacity: 1;
+    }
+
+    100% {
+        left: 50%;
+        top: 70%;
+        opacity: 0;
+    }
+}
+
+@keyframes changeContent {
+    0% {
+        content: 'Connections';
+    }
+
+    25% {
+        content: 'Internships';
+    }
+
+    50% {
+        content: 'Jobs';
+    }
+
+    75% {
+        content: 'Something';
+    }
+}
+
+@keyframes swiggle {
+    25% {
+        transform: translate(3px, 7px);
+    }
+
+    50% {
+        transform: translate(-3px, 7px);
+    }
+
+    75% {
+        transform: translate(3px, -7px);
+    }
+}
+
+@keyframes glowOut {
+    to {
+        opacity: 1;
+        scale: 1;
+    }
+}
+
+@keyframes appreciationAnimation {
+    30% {
+        scale: 2;
+    }
+
+    to {
+        opacity: 1;
+        background-size: 100%;
+    }
+}
+
+@keyframes typing {
+
+    40% {
+        left: calc(110%);
+    }
+
+    80% {
+        left: calc(0%);
+    }
+
+}
+
+@keyframes blink {
+    50% {
+        border-left-color: transparent;
+    }
+}
+
+@keyframes slide {
+    100% {
+        top: -360px;
+    }
+}
+
+
+@keyframes slideUp {
+    0% {
+        top: 0;
+    }
+
+    25% {
+        top: -6.5rem;
+    }
+
+    50% {
+        top: -12.5rem;
+    }
+
+    72.5% {
+        top: -19rem;
+    }
+}
+
+
+/* Handling Responsive */
+
+@media screen and (max-width : 1040px) {
+    .element {
+        font-size: 12px;
+    }
+
+
+    .header-container .text-container .static-txt {
+        font-size: 4rem;
+    }
+
+    .appreciation .heading {
+        font-size: 5rem;
+    }
+
+    .recognition {
+        font-size: 2rem;
+    }
+}
+
+@media screen and (max-width : 775px) {
+    .appreciation .heading {
+        font-size: 4rem;
+    }
+
+    .element {
+        font-size: 12px !important;
+    }
+}
+
+@media screen and (max-width : 435px) {
+    .static-txt {
+        font-size: 1rem;
+    }
+
+    .static-content {
+        font-size: 16px;
+    }
+
+    .header-container .text-container .static-txt {
+        font-size: 2rem;
+    }
+
+    .header-container .text-container .dynamic-txt {
+        font-size: 16px;
+    }
+
+
+    .appreciation .recognition span {
+        font-size: 18px;
+    }
+
+    .appreciation .heading {
+        font-size: 2rem;
+    }
+
+    .element {
+        font-size: 16px;
+    }
+
+    .element-1 {
+        top: 20%;
+    }
+
+    .element-3 {
+        top: 75%;
+        left: 80%;
+    }
+
+    .element-5 {
+        top: 80%;
+    }
+
+}
+
+@media screen and (max-width : 330px) {
+    .element {
+        font-size: 13px !important;
+        padding: 5px;
+    }
+
+    .appreciation {
+        height: max-content;
+        min-height: max-content;
+    }
+
+}
