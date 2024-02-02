@@ -56,9 +56,10 @@ function openNewPage() {
     window.location.href = 'Thankyou-page.html';
 }
 
+// h = window.innerHeight,
 
 var w = window.innerWidth,
-    h = window.innerHeight,
+    h = document.querySelector('body').offsetHeight * 2.5,
     canvas = document.getElementById('test'),
     ctx = canvas.getContext('2d'),
     rate = 60,
